@@ -1,0 +1,35 @@
+{
+  "name": "slew",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.15.0",
+    "axios": "^1.7.5",
+    "cheerio": "^1.0.0",
+    "got": "^14.4.2",
+    "html-react-parser": "^5.1.16",
+    "jsdom": "^25.0.0",
+    "keyword-extractor": "^0.0.28",
+    "mongoose": "^8.6.2",
+    "next": "^14.2.14",
+    "node-html-parser": "^6.1.13",
+    "puppeteer": "^23.2.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-virtualized": "^9.22.5",
+    "tough-cookie": "^4.1.4",
+    "virtual-window": "^1.0.20"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "^14.2.14"
+  }
+}

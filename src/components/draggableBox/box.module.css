@@ -1,0 +1,119 @@
+.box {
+    min-width: 300px;
+    min-height: 504px;
+    width: 300px;
+    height: 504px;
+    position: fixed;
+    top: 60px;
+    left: 50px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    background: #fff;
+    box-shadow: 0px 12px 48px #efefef;
+    backdrop-filter: blur(300px);
+}
+
+.topbar {
+    width: 100%;
+    margin-top: 8px;
+    touch-action: none;
+    background-color: var(--pure-black);
+    height: 8px;
+    max-width: 134px;
+    border-radius: 10px;
+}
+
+.contentBox {
+    width: 100%;
+    height: calc(100% - 22px);
+    overflow: hidden;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.contentBox {
+    overflow: hidden;
+    position: relative;
+}
+
+.iframe {
+    height: 100%;
+    border-radius: 0px 0px 10px 10px;
+    overflow: auto;
+    width: 100%;
+    -ms-zoom: 1;
+    -moz-transform: scale(1);
+    -moz-transform-origin: 0px 0;
+    -o-transform: scale(1);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(1);
+    -webkit-transform-origin: 0 0;
+}
+
+.right {
+    position: absolute;
+    width: 20px;
+    height: 55%;
+    z-index: 3;
+    touch-action: none;
+    border-radius: 20px;
+    background-color: transparent;
+}
+
+.right {
+    top: 25%;
+    right: -10px;
+    cursor: e-resize;
+}
+
+.rebtn{
+    position: absolute;
+    top: 2px;
+    padding: 1px;
+    background: #EBEBEB;
+    left: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    transition: 0.2s all ease;
+    justify-content: center;
+}
+
+.closebtn{
+    position: absolute;
+    top: 2px;
+    padding: 1px;
+    background: #EBEBEB;
+    right: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    transition: 0.2s all ease;
+    justify-content: center;
+}
+
+.closebtn svg, .rebtn svg{
+    width: 16px;
+    height: 16px;
+    fill: #464646;
+}
+
+.bottom {
+    width: 80%;
+    height: 12px;
+    touch-action: none;
+    bottom: 0px;
+    position: absolute;
+    z-index: 3;
+    border-radius: 20px;
+    cursor: n-resize;
+    background-color: transparent;
+}
+
+@media (width >= 1250px) {
+    .iframe{
+        width: calc(100% + 16px) !important;
+    }
+}
