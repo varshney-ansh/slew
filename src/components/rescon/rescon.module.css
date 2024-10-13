@@ -42,7 +42,7 @@
 .cite{
     display: flex;
     align-items: center;
-    height: 19px;
+    height: fit-content;
     text-overflow: ellipsis;
 }
 
