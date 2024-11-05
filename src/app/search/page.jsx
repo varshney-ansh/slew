@@ -12,7 +12,14 @@ const querySearch = async ({ q, page }) => {
 
 }
 
-const TestPage = async ({ searchParams: { q, page, type } }) => {
+const TestPage = async props => {
+    const searchParams = await props.searchParams;
+
+    const {
+        q,
+        page,
+        type
+    } = searchParams;
 
     if (q == null || q == '' || q == 'undefined') {
         permanentRedirect('/')
