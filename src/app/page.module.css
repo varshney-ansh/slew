@@ -1,0 +1,122 @@
+.container{
+    width: 100%;
+    height: 100vh;
+    touch-action: none;
+    cursor: default;
+}
+
+.MainContainer{
+    width: 100%;
+    max-width: 832px;
+    margin: 0 auto;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brandLogo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchbar form{
+    margin: 20px 0px;
+    height: 46px;
+    width: 100%;
+    /* min-width: 584px; */
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    justify-content: center;
+}
+
+.searchbar form input{
+    height: 100%;
+    font-size: 20px;
+    flex-grow: 1;
+    font-family: inherit;
+    line-height: 28px;
+    outline: none;
+    padding-right: 20px;
+    border: 1px solid #dfe1e5;
+    border-left: none;
+    border-radius: 0px 32px 32px 0px;
+}
+
+.searchbar form span{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #dfe1e5;
+    border-right: none;
+    border-radius: 32px 0px 0px 32px;
+    padding: 0px 12px;
+}
+
+.searchbar form svg{
+    color: #9aa0a6;
+    width: 18px;
+    height: 18px
+}
+
+
+.searchbar form:hover, .searchbar form:has(> input:focus){
+    background: #fff;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, .28);
+    border-color: transparent;
+    border-radius: 32px;
+}
+
+.trendKeys{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.trendKeys li{
+    padding: 10px 12px;
+    border: solid 1px #e0e4e9;
+    border-radius: 100px;
+    transition: all 0.2s ease;
+}
+
+.trendKeys li a{
+    text-decoration: none;
+    color: #464e56;
+    display: flex;
+    transition: all 0.2s ease;
+    align-items: center;
+    gap: 8px;
+}
+
+.trendKeys li a svg{
+    fill: #464e56;
+    scale: 0.8;
+}
+
+.trendKeys li a span{
+    font-weight: 700;
+    line-height: 16px;
+    font-size: 12px;
+}
+
+.trendKeys li:hover{
+    background-color: #e8f0fe;
+}
+
+.trendKeys li:hover span, .trendKeys li:hover svg{
+    color: #1967d2;
+    fill: #1967d2;
+}
+
+@media (min-width: 650px) {
+    .searchbar form{
+        min-width: 584px;
+    }
+}

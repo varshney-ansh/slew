@@ -1,0 +1,31 @@
+.footer{
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    padding-left: calc(25vw + -238.75px);
+}
+
+.container{
+    border-top: 1px solid #e2e2e6;
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+}
+
+.otherLinks{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.otherLinks a{
+    color: #5f6368;
+    transition: 0.2s all ease;
+    font-size: 12px;
+    line-height: 1.308em;
+    text-decoration: none;
+}
+
+.otherLinks a:hover{
+    color: #4285f4;
+}

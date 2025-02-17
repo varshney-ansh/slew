@@ -1,0 +1,93 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  /* red  */
+  --light-red-default: rgb(255,59,48);
+  --dark-red-default: rgb(255,69,58);
+  --light-red-accessible: rgb(215,0,21);
+  --dark-red-accessible: rgb(255,105,97);
+
+  /* orange */
+  --light-orange-default: rgb(255,149,0);
+  --dark-orange-default: rgb(255,159,10);
+  --light-orange-accessible: rgb(201,52,0);
+  --dark-orange-accessible: rgb(255,179,64);
+
+  /* yellow */
+  --light-yellow-default: rgb(255,204,0);
+  --dark-yellow-default: rgb(255,214,10);
+  --light-yellow-accessible: rgb(160,90,0);
+  --dark-yellow-accessible: rgb(255,212,38);
+
+  /* green  */
+  --light-green-default: rgb(40,205,65);
+  --dark-green-default: rgb(50,215,75);
+  --light-green-accessible: rgb(0,125.27);
+  --dark-green-accessible: rgb(49,222,75);
+
+  /* mint  */
+  --light-mint-default: rgb(0,199,190);
+  --dark-mint-default: rgb(102,212,207);
+  --light-mint-accessible: rgb(12,129,123);
+  --dark-mint-accessible: rgb(102,212,207);
+
+  /* teal  */
+  --light-teal-default: rgb(89,173,196);
+  --dark-teal-default: rgb(106,196,220);
+  --light-teal-accessible: rgb(0,130,153);
+  --dark-teal-accessible: rgb(93,230,255);
+
+  /* blue  */
+  --light-blue-default: rgb(0,122,255);
+  --dark-blue-default: rgb(10,132,255);
+  --light-blue-accessible: rgb(0,64,221);
+  --dark-blue-accessible: rgb(64,156,255);
+
+  /* cyan  */
+  --light-cyan-default: rgb(85,190,240);
+  --dark-cyan-default: rgb(90,200,245);
+  --light-cyan-accessible: rgb(0,113,164);
+  --dark-cyan-accessible: rgb(112,215,255);
+
+  /* indigo  */
+  --light-indigo-default: rgb(88,86,214);
+  --dark-indigo-default: rgb(94,92,230);
+  --light-indigo-accessible: rgb(54,52,163);
+  --dark-indigo-accessible: rgb(125,122,255);
+
+  /* purple  */
+  --light-purple-default: rgb(175,82,222);
+  --dark-purple-default: rgb(191,90,242);
+  --light-purple-accessible: rgb(173,68,171);
+  --dark-purple-accessible: rgb(218,143,255);
+
+  /* pink  */
+  --light-pink-default: rgb(255,45,85);
+  --dark-pink-default: rgb(255,55,95);
+  --light-pink-accessible: rgb(211,15,69);
+  --dark-pink-accessible: rgb(255,100,130);
+
+  /* brown  */
+  --light-brown-default: rgb(162,132,94);
+  --dark-brown-default: rgb(172,142,104);
+  --light-brown-accessible: rgb(127,101,69);
+  --dark-brown-accessible: rgb(181,148,105);
+
+  /* gray  */
+  --light-gray-default: rgb(142,142,147);
+  --dark-gray-default: rgb(152,152,157);
+  --light-gray-accessible: rgb(105,105,110);
+  --dark-gray-accessible: rgb(152,152,157);
+
+  --pure-black: #000000;
+}
+
+img{
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
