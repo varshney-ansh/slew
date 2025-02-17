@@ -1,27 +1,27 @@
 'use server'
-import puppeteer from 'puppeteer-extra';
-const stealthplugin = require('puppeteer-extra-plugin-stealth');
-import { executablePath } from 'puppeteer';
+// import puppeteer from 'puppeteer-extra';
+// const stealthplugin = require('puppeteer-extra-plugin-stealth');
+// import { executablePath } from 'puppeteer';
 import { JSDOM } from 'jsdom';
 import { CookieJar } from 'tough-cookie';
-const keyword_extractor = require("keyword-extractor");
+// const keyword_extractor = require("keyword-extractor");
 
 
-export const extractHtml = async (url) => {
-    try {
-        puppeteer.use(stealthplugin);
-        const browser = await puppeteer.launch({ headless: "true", executablePath: executablePath() });
-        const page = await browser.newPage();
-        await page.goto(url, { waitUntil: 'domcontentloaded' });
+// export const extractHtml = async (url) => {
+//     try {
+//         puppeteer.use(stealthplugin);
+//         const browser = await puppeteer.launch({ headless: "true", executablePath: executablePath() });
+//         const page = await browser.newPage();
+//         await page.goto(url, { waitUntil: 'domcontentloaded' });
         
-        const html = await page.content();
-        await browser.close();
-        return html;
+//         const html = await page.content();
+//         await browser.close();
+//         return html;
 
-    } catch (error) {
-        return {error: 'resolver not responding'};
-    }
-}
+//     } catch (error) {
+//         return {error: 'resolver not responding'};
+//     }
+// }
 
 export const translateHtml = async (url) => {
     const html = await domExtract(url);
@@ -46,69 +46,69 @@ export const domExtract = async (url) => {
     return html;
 }
 
-export const extractResults = async (html) => {
-    const results = [];
-    const dom = new JSDOM(html);
-    const document = dom.window.document;
-    const titles = document.querySelectorAll('.N54PNb');
-    const unRe = document.querySelectorAll('span.LEwnzc');
-    unRe.forEach(e => e.remove());
+// export const extractResults = async (html) => {
+//     const results = [];
+//     const dom = new JSDOM(html);
+//     const document = dom.window.document;
+//     const titles = document.querySelectorAll('.N54PNb');
+//     const unRe = document.querySelectorAll('span.LEwnzc');
+//     unRe.forEach(e => e.remove());
 
-    titles.forEach(function (node) {
-        const title = node.querySelector('.LC20lb')?.innerHTML;
-        const favUrl = node.querySelector('.Vwoesf img')?.src;
-        const cite = node.querySelector('.GvPZzd')?.innerHTML;
-        const siteName = node.querySelector('.VuuXrf')?.innerHTML;
-        const targetUrl = node.querySelector('.yuRUbf div span a').href;
-        const desc = node.querySelector('.r025kc span')?.innerHTML;
-        // for title 
-        const titlestr = title.toString();
-        const striptitle = titlestr.replace(/(<([^>]+)>)/ig, '');
-        const finaltitle = striptitle.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()|–.]/g, "").replace(/\&nbsp;/g, '');
-        // for description
-        const str = desc?.toString();
-        const stripdesc = str?.replace(/(<([^>]+)>)/ig, '');
-        const finaldesc = stripdesc?.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()|–.]/g, "").replace(/\&nbsp;/g, '');
-        // for siteName
-        const siteStr = siteName?.toString();
-        const finalSiteName = siteStr?.replace(/(<([^>]+)>)/ig, '').replace(/\&nbsp;/g, '').replace(/[.,\/#!$%\^&\*;:{}=\-_`~()|–.]/g, "");;
-        // extract terms
-        const desc_terms = keyword_extractor.extract(finaldesc, {
-            language: "english",
-            remove_digits: true,
-            return_changed_case: true,
-            remove_duplicates: false
-        });
+//     titles.forEach(function (node) {
+//         const title = node.querySelector('.LC20lb')?.innerHTML;
+//         const favUrl = node.querySelector('.Vwoesf img')?.src;
+//         const cite = node.querySelector('.GvPZzd')?.innerHTML;
+//         const siteName = node.querySelector('.VuuXrf')?.innerHTML;
+//         const targetUrl = node.querySelector('.yuRUbf div span a').href;
+//         const desc = node.querySelector('.r025kc span')?.innerHTML;
+//         // for title 
+//         const titlestr = title.toString();
+//         const striptitle = titlestr.replace(/(<([^>]+)>)/ig, '');
+//         const finaltitle = striptitle.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()|–.]/g, "").replace(/\&nbsp;/g, '');
+//         // for description
+//         const str = desc?.toString();
+//         const stripdesc = str?.replace(/(<([^>]+)>)/ig, '');
+//         const finaldesc = stripdesc?.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()|–.]/g, "").replace(/\&nbsp;/g, '');
+//         // for siteName
+//         const siteStr = siteName?.toString();
+//         const finalSiteName = siteStr?.replace(/(<([^>]+)>)/ig, '').replace(/\&nbsp;/g, '').replace(/[.,\/#!$%\^&\*;:{}=\-_`~()|–.]/g, "");;
+//         // extract terms
+//         const desc_terms = keyword_extractor.extract(finaldesc, {
+//             language: "english",
+//             remove_digits: true,
+//             return_changed_case: true,
+//             remove_duplicates: false
+//         });
 
-        const title_terms = keyword_extractor.extract(finaltitle, {
-            language: "english",
-            remove_digits: true,
-            return_changed_case: true,
-            remove_duplicates: false
-        });
+//         const title_terms = keyword_extractor.extract(finaltitle, {
+//             language: "english",
+//             remove_digits: true,
+//             return_changed_case: true,
+//             remove_duplicates: false
+//         });
 
-        const name_terms = keyword_extractor.extract(finalSiteName, {
-            language: "english",
-            remove_digits: true,
-            return_changed_case: true,
-            remove_duplicates: false
-        });
+//         const name_terms = keyword_extractor.extract(finalSiteName, {
+//             language: "english",
+//             remove_digits: true,
+//             return_changed_case: true,
+//             remove_duplicates: false
+//         });
 
-        const terms = [...desc_terms,...title_terms,...name_terms];
+//         const terms = [...desc_terms,...title_terms,...name_terms];
 
-        const item = {
-            title: title,
-            favUrl: favUrl,
-            cite: cite,
-            siteName: siteName,
-            targetUrl: targetUrl,
-            desc: desc,
-            keywords: terms,
-        }
+//         const item = {
+//             title: title,
+//             favUrl: favUrl,
+//             cite: cite,
+//             siteName: siteName,
+//             targetUrl: targetUrl,
+//             desc: desc,
+//             keywords: terms,
+//         }
 
-        results.push(item);
-    })
+//         results.push(item);
+//     })
 
-    return results;
+//     return results;
 
-}
+// }

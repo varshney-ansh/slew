@@ -1,4 +1,4 @@
-import { Client } from "@elastic/elasticsearch-serverless";
+const { Client } = require('@elastic/elasticsearch-serverless');
 
 const client = new Client({
     node: process.env.ES_ENDPOINT, // Elasticsearch endpoint
