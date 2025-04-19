@@ -9,6 +9,7 @@
 # testing
 /coverage
 /src/app/crawler/
+.env
 
 # next.js
 /.next/
