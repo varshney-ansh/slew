@@ -16,7 +16,7 @@ export const getResults = async ({q, page}) => {
             "multi_match": {
                 "query": q,
                 "type": "most_fields",
-                "fields": ["cite", "title", "desc", "siteName", "keywords", "url"],
+                "fields": ["cite", "title", "description", "siteName", "keywords", "url"],
                 "operator": "and"
             }
         },

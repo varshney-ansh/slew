@@ -12,7 +12,7 @@ const ResContainer = ({res}) => {
            
             <div className={styles.topdiv}>
                 <div className={styles.favprev}>
-                    <Image src={res.favUrl ? res.favUrl : defFav} width={18} height={18} alt="favPrev" />
+                    <Image src={res.favicon ? res.favicon : defFav} width={18} height={18} alt="favPrev" />
                 </div>
                 <div className={styles.infoabout}>
                     <div className={styles.sitename}>
@@ -28,10 +28,10 @@ const ResContainer = ({res}) => {
             </div>
             <div className={styles.bottomdiv}>
                 <div className={styles.metaTitle}>
-                    <Link  target="_blank" href={res.targetUrl}>{res.title ? parse(res.title) : (<span>No information is available for this page.</span>)}</Link>
+                    <Link  target="_blank" href={res.url}>{res.title ? parse(res.title) : (<span>No information is available for this page.</span>)}</Link>
                 </div>
                 <div className={styles.metadesc}>
-                    <p>{res.desc ? parse(res.desc) : (<span>No information is available for this page.</span>)}</p>
+                    <p>{res.description ? (res.description.length > 135 ? `${(res.description).substring(0, 135)}...`: res.description) : (<span>No information is available for this page.</span>)}</p>
                 </div>
             </div>
         </div>
